@@ -1,0 +1,23 @@
+# data_analysis.py
+# -----------------------
+# pandasでCSVを読み込み、matplotlibで簡単なグラフを表示
+# -----------------------
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# CSVファイルを読み込み（例：sales.csv）
+# sales.csv の例：
+# month,sales
+# Jan,100
+# Feb,120
+# Mar,90
+df = pd.read_csv("sales.csv")
+
+# グラフ作成
+plt.plot(df["month"], df["sales"], marker='o')
+plt.title("月別売上推移")
+plt.xlabel("月")
+plt.ylabel("売上")
+plt.grid(True)
+plt.show()
